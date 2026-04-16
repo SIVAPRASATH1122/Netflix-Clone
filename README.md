@@ -1,16 +1,44 @@
-# React + Vite
+# Netflix Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+* A fully functional Netflix Clone built using React, Firebase, and TMDB API
+* Allows users to browse movies and watch trailers
+* Includes authentication and responsive UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+* 🔐 User Signup and Login using Firebase Authentication
+* 🎥 Watch movie trailers via YouTube integration
+* 🔍 Search functionality for movies
+* 🎬 Multiple categories:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  * Popular on Netflix
+  * Blockbuster Movies
+  * Top Picks For You
+  * Upcoming Movies
+* Responsive design for all devices
+* Smooth horizontal scrolling with arrow navigation
+* Toast notifications for login, signup, and errors
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React.js (Frontend)
+* Firebase Authentication
+* Firestore Database
+* TMDB API
+* CSS
+* React Toastify
+
+## Installation
+
+* Clone the repository
+* Navigate to the project folder
+* Install dependencies using `npm install`
+* Run the project using `npm run dev`
+
+## Purpose
+
+* Demonstrates React development skills
+* Shows API integration and authentication handling
+* Designed as a portfolio project for web development roles
