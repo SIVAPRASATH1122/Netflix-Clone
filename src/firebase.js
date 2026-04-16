@@ -1,10 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { 
-  createUserWithEmailAndPassword, 
-  getAuth, 
-  signInWithEmailAndPassword, 
-  signOut 
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  setPersistence,
+  browserSessionPersistence
 } from "firebase/auth";
+
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { toast } from "react-toastify";
 
@@ -21,7 +24,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ✅ SIGNUP
+// 🔥 FORCE SESSION RESET (logout after closing tab)
+setPersistence(auth, browserSessionPersistence);
+
+// ================= SIGNUP =================
 const signup = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -47,7 +53,7 @@ const signup = async (name, email, password) => {
   }
 };
 
-// ✅ LOGIN
+// ================= LOGIN =================
 const login = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -55,18 +61,18 @@ const login = async (email, password) => {
 
   } catch (error) {
     console.log(error);
-    toast.error(`🙅 Invalid Credential`);   // ✅ FIXED
+    toast.error("🙅 Invalid Credential");
   }
 };
 
-// ✅ LOGOUT
+// ================= LOGOUT =================
 const logout = async () => {
   try {
     await signOut(auth);
-    toast.success("Logged out successfully 👋");  // ✅ added toast
+    toast.success("Logged out successfully 👋");
   } catch (error) {
     console.log(error);
-    toast.error(`🙅 Invalid Credential`);
+    toast.error("🙅 Error logging out");
   }
 };
 
